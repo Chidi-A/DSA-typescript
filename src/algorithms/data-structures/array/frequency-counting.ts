@@ -113,3 +113,24 @@ export function topKFrequentBucketSort<T>(sightings: T[], k: number): T[] {
 
   return result.slice(0, k);
 }
+
+/**
+ * COMPLEXITY ANALYSIS - Bucket Sort:
+ *
+ * Time Complexity: O(n)
+ * - Building frequency map: O(n)
+ * - Creating buckets array: O(n)
+ * - Filling buckets: O(m) where m = unique elements
+ * - Collecting top k: O(n) worst case, O(k) average
+ * - Total: O(n)
+ *
+ *
+ * This is OPTIMAL - we must look at every element at least once!
+ *
+ * Space Complexity: O(n)
+ * - Frequency map: O(m)
+ * - Buckets array: O(n) - array of size n+1
+ * - Each bucket stores elements: O(m) total across all buckets
+ * - Result array: O(k)
+ * - Total: O(n)
+ */
