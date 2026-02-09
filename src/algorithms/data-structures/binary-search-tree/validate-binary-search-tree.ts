@@ -116,3 +116,32 @@ export function isValidBSTIterative(root: TreeNode | null): boolean {
 
   return true;
 }
+
+/*
+APPROACH 1: Range Checking
+- Time Complexity: O(n)
+  * We visit each node exactly once
+  * At each node, we do O(1) work (comparison)
+  
+- Space Complexity: O(h) where h = height of tree
+  * Recursion stack depth = height of tree
+  * Best case (balanced tree): O(log n)
+  * Worst case (skewed tree): O(n)
+
+APPROACH 2: In-Order Traversal
+- Time Complexity: O(n)
+  * We visit each node exactly once
+  * At each node, we do O(1) work (comparison and assignment)
+  
+- Space Complexity: O(h)
+  * Recursion stack depth = height of tree
+  * Best case (balanced tree): O(log n)
+  * Worst case (skewed tree): O(n)
+
+COMPARISON:
+- Both approaches have the same time and space complexity
+- Range checking is often preferred because:
+  1. More intuitive - directly encodes BST property
+  2. Can terminate early on invalid nodes
+  3. Doesn't need to track previous state
+*/
